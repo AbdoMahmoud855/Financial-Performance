@@ -197,23 +197,6 @@ Notice that **Southwest, Northwest and Canada** are also among the biggest marke
 ---
 
 ## 📄 Page 2: KeyInfluenceToProfit
-##Increase
-
-<img width="1339" height="749" alt="image" src="https://github.com/user-attachments/assets/f273286c-f150-4537-9c94-c3d32efc4462" />
-
-<img width="1340" height="750" alt="image" src="https://github.com/user-attachments/assets/a088651e-67d9-4166-9797-49f9b549c2ae" />
-
-<img width="1335" height="749" alt="image" src="https://github.com/user-attachments/assets/e1bb1879-8849-4ccf-8e66-b9abc6703e98" />
-
-##Decrease
-
-<img width="1338" height="750" alt="image" src="https://github.com/user-attachments/assets/a9da36cb-6e1a-4c84-ba25-e78504aca917" />
-
-<img width="1344" height="744" alt="image" src="https://github.com/user-attachments/assets/52c51517-b2ef-41a7-be07-4e206f7da256" />
-
-<img width="1347" height="753" alt="image" src="https://github.com/user-attachments/assets/aba64524-14b5-4e36-a8a6-b6a6fcbbf26a" />
-
-
 
 ### ⬆️ What Increases Profit?
 
@@ -225,7 +208,7 @@ Notice that **Southwest, Northwest and Canada** are also among the biggest marke
 
 **The story:** Profit rises as order value rises, and the **sweet spot is the $1,828 – $2,195 range**. Above that range it is still positive but much lower, which may point to heavier discounting on the biggest orders.
 
-![Key Influencers - Decrease](images/04_key_influence_decrease.png)
+<img width="1339" height="749" alt="image" src="https://github.com/user-attachments/assets/f273286c-f150-4537-9c94-c3d32efc4462" />
 
 ### ⬇️ What Decreases Profit?
 
@@ -239,7 +222,7 @@ Notice that **Southwest, Northwest and Canada** are also among the biggest marke
 
 > **Takeaway:** Push customers toward mid-to-high-value orders, and review discount rules for bulk quantities.
 
-![Top Segments - High](images/03_top_segments_high.png)
+<img width="1338" height="750" alt="image" src="https://github.com/user-attachments/assets/a9da36cb-6e1a-4c84-ba25-e78504aca917" />
 
 ### 🎯 Top Segments
 
@@ -253,7 +236,9 @@ Notice that **Southwest, Northwest and Canada** are also among the biggest marke
 | | Segment 2 | **3.09** | **51,681** |
 | | Segment 1 | 2.35 | 8,364 |
 
-![Top Segments - Low](images/05_top_segments_low.png)
+<img width="1344" height="744" alt="image" src="https://github.com/user-attachments/assets/52c51517-b2ef-41a7-be07-4e206f7da256" />
+
+<img width="1347" height="753" alt="image" src="https://github.com/user-attachments/assets/aba64524-14b5-4e36-a8a6-b6a6fcbbf26a" />
 
 **The story:** There is a healthy high-profit group (Segment 1, 16K records at an average of 191). But the **largest low-profit segment contains about 51.7K records with an average profit of just 3.09**. The bulk of the activity earns almost nothing.
 
