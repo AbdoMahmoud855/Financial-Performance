@@ -481,14 +481,7 @@ Notice that **Southwest, Northwest and Canada** are also among the biggest marke
 
 > 📝 **Note:** Targets should be set by the business after the Phase 1 baseline is measured. The figures above are current values from the dashboard, and the directions are the recommended goals.
 
-### ⚠️ Risks to Watch
 
-| Risk | Mitigation |
-|---|---|
-| Higher minimum orders may reduce order count | Test in a few territories first and watch total profit, not order count |
-| Lower discounts may reduce volume | Use A/B tests and cap discounts instead of removing them |
-| Price increases may push customers to competitors | Raise prices only on consistently loss-making products |
-| Small samples in some regions | Check the number of orders before acting on regional results |
 
 ---
 
