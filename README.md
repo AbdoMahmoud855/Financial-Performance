@@ -2,7 +2,8 @@
 
 An interactive Power BI dashboard that tells the story of **19K customers and 31K orders** across **3 regions and 10 territories**, selling **Bikes, Components, Clothing and Accessories** between **2011 and 2014**. Instead of staring at tables, the dashboard answers real questions: Where does the money come from? Where do we lose it? What actually drives profit up or down? Are discounts helping or hurting?
 
-<img width="1516" height="758" alt="image" src="https://github.com/user-attachments/assets/4b87d327-c126-4e53-aba8-ef68c0d2fd45" />
+<img width="1003" height="497" alt="f1" src="https://github.com/user-attachments/assets/4a755c11-8440-42a7-8e01-d17ce2ecdace" />
+
 
 
 ---
