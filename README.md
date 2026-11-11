@@ -11,12 +11,12 @@ An interactive Power BI dashboard that tells the story of **19K customers and 31
 
 | File | Description |
 |---|---|
-| `FinancialDashboard.pbix` | The complete Power BI report |
+| `Financial Performance Dashboard.pbix` | The complete Power BI report |
 | ↳ **Financial Dashboard** page | Page 1 – overview (KPIs, trends, products, regions, stock) |
 | ↳ **KeyInfluenceToProfit** page | Page 2 – AI-driven analysis of what moves profit (Key Influencers + Top Segments) |
-| ↳ **TreeMap** page | Page 3 – sales weight of every product subcategory |
-| ↳ **DecompositionTree** page | Page 4 – customers and orders broken down by region |
-| `images/` | Dashboard screenshots |
+| ↳ **DecompositionTree** page | Page 3 – customers and orders broken down by region |
+| ↳ **TreeMap** page | Page 4 – drill-down treemap: Product Category → Subcategory |
+| `images/` | Dashboard screenshots (including the TreeMap drill-down views) |
 | `data/` | The dataset |
 
 **Data columns used in the report:** Region Group · Region Name · Product Category · Product Subcategory · ProductStatus · Year / Month · OrderQty · totalOrderWithDiscount · totalOrderWithoutDiscount · totalRealSales · realprofit · grossProfitperProduct · Loss · Customer · Order
@@ -52,7 +52,7 @@ KPI cards: *"Where do we stand right now?"*
 ### Page 3 & 4: Deep Dives
 | Chart | Question | Short Answer |
 |---|---|---|
-| TreeMap | Which subcategories drive sales after discount? | Road Bikes and Mountain Bikes take up most of the map. |
+| TreeMap (drill-down) | Which categories and subcategories drive sales after discount? | **Bikes** bring in $140.53M (~85%). Inside Bikes, Road ($63.18M) and Mountain ($55.46M) dominate. Every category has its own clear leader: Mountain Frames, Jerseys, Helmets. |
 | Decomposition Tree – Customers | Where are our customers? | North America (9,887) → Europe (5,607) → Pacific (3,625). |
 | Decomposition Tree – Orders | Where do orders come from? | North America (16,108), led by Southwest (6,224). |
 
@@ -78,7 +78,7 @@ The dashboard follows a clean, consistent **green corporate theme** so the numbe
 | Page background | Pale grey / sage | Soft canvas that lets the cards stand out |
 
 ### Navigation
-Three buttons in the header (**KeyInfluence**, **DecompositionTree**, **TreeMap**) open the deep-dive pages, and a back arrow on each page returns to the main dashboard.
+Three buttons in the header (**KeyInfluence**, **DecompositionTree**, **TreeMap**) open the deep-dive pages, and a back arrow on each page returns to the main dashboard. On the **TreeMap** page, click a category block to drill into its subcategories.
 
 ---
 
@@ -252,16 +252,92 @@ Notice that **Southwest, Northwest and Canada** are also among the biggest marke
 
 ---
 
-## 📄 Page 4: TreeMap
+## 📄 Page 4: TreeMap (Drill-Down)
 
-<img width="1349" height="748" alt="image" src="https://github.com/user-attachments/assets/bd10b600-ec53-4c85-83f0-9e78175eb2ed" />
+The TreeMap is a **two-level drill-down**. It opens on **Product Category**, and clicking a category opens its **Product Subcategories**. The measure is `Sum of totalOrderWithDiscount`: block size = sales after discount, and a darker green means a bigger value.
+
+### Level 1: Product Category
+
+<img width="1202" height="672" alt="f5" src="https://github.com/user-attachments/assets/eaeb46f1-de84-4832-82fb-06f153f7c8ff" />
 
 
-**Type:** TreeMap · **Question:** Which subcategories drive sales after discount?
+| Category | Sales After Discount | Share of Total |
+|---|---|---|
+| **Bikes** | $140.53M | ~85% |
+| Components | $19.87M | ~12% |
+| Clothing | $3.35M | ~2% |
+| Accessories | ≈ $1.61M\* | ~1% |
 
-**The story:** **Road Bikes** and **Mountain Bikes** take up the biggest blocks, followed by **Touring Bikes**, **Mountain Frames** and **Road Frames**. After that the map breaks into dozens of tiny blocks (Jerseys, Vests, Gloves, Helmets, Tires, Pedals and more).
+\*The Accessories label is truncated in the chart; the value is the sum of its subcategories shown below.
 
-> **Takeaway:** A handful of products make up most of the revenue, and the long tail of small items contributes very little. Worth asking whether the tail is worth its operational cost.
+**The story:** Bikes take up about 85% of the whole map. Components are a distant second, and Clothing and Accessories are barely visible blocks.
+
+### 🚲 Bikes
+<img width="1200" height="672" alt="f6" src="https://github.com/user-attachments/assets/75f998a8-92f3-4bf8-ba53-84c0eadba95a" />
+
+
+| Subcategory | Sales After Discount | Share of Bikes |
+|---|---|---|
+| **Road Bikes** | $63.18M | ~45% |
+| **Mountain Bikes** | $55.46M | ~39% |
+| Touring Bikes | $21.89M | ~16% |
+
+**The story:** Road and Mountain Bikes together make **$118.64M, about 84% of all bike sales**. Touring Bikes are a clear third. This matches the profit ranking on the main page.
+
+### ⚙️ Components
+
+<img width="1201" height="671" alt="f7" src="https://github.com/user-attachments/assets/4169af91-7f3e-44a8-aeec-dde2030053de" />
+
+| Subcategory | Sales After Discount |
+|---|---|
+| **Mountain Frames** | $7.99M |
+| **Road Frames** | $6.58M |
+| Touring Frames | $2.69M |
+| Wheels | $1.11M |
+| Cranksets | $0.33M |
+| Other subcategories | Each below $0.33M |
+
+**The story:** The three frame types make **$17.26M, about 87% of all Components sales**. Note that here Mountain Frames beat Road Frames, the opposite of the bikes themselves. The remaining 9 subcategories (Handlebars, Pedals, Forks, Derailleurs, Brakes, Headsets, Saddles, Bottom Brackets, Chains) form a long tail of tiny blocks.
+
+### 👕 Clothing
+
+<img width="1200" height="670" alt="f8" src="https://github.com/user-attachments/assets/f9276e50-3bef-4e49-9262-71baff59a085" />
+
+
+| Subcategory | Sales After Discount |
+|---|---|
+| **Jerseys** | $1,142.42K |
+| Shorts | $661.38K |
+| Vests | $420.82K |
+| Gloves | $393.55K |
+| Tights | $339.97K |
+| Bib-Shorts | $277.28K |
+| Caps | ~$72K |
+| Socks | ~$46K |
+
+**The story:** Jerseys alone are about a third of Clothing, and Jerseys + Shorts are over half (~54%). Caps and Socks are the smallest blocks.
+
+### 🪖 Accessories
+
+<img width="1196" height="682" alt="f9" src="https://github.com/user-attachments/assets/ec9884df-db2c-4228-9333-5b59d0eadd76" />
+
+
+| Subcategory | Sales After Discount |
+|---|---|
+| **Helmets** | $655.61K |
+| Bike Racks | $372.68K |
+| Tires and Tubes | $222.33K |
+| Hydration Packs | $146.61K |
+| Bottles and Cages | $63.78K |
+| Fenders | ~$42K |
+| Bike Stands | $35.50K |
+| Locks | $26.80K |
+| Cleaners | $25.47K |
+| Pumps | $22.28K |
+
+**The story:** Helmets are about 41% of Accessories, and Helmets + Bike Racks make up about 64%. Everything else is a small block.
+
+> **Takeaway:** Sales are concentrated at **every level**: one category (Bikes) carries the business, two subcategories (Road and Mountain Bikes) carry Bikes, and each smaller category depends on one or two products (Frames, Jerseys, Helmets). On the other side, a long tail of items (Socks, Caps, Pumps, Cleaners, Locks and others) each sells under $75K, less than 0.05% of total sales. Worth asking whether that tail is worth its operational cost, and whether the leaders (Helmets, Jerseys) are the best products to bundle with bikes.
 
 ---
 
@@ -403,8 +479,8 @@ Notice that **Southwest, Northwest and Canada** are also among the biggest marke
 | Tactic | How | Metric to Track |
 |---|---|---|
 | Attach-rate programs | Offer accessories / clothing with every bike purchase | Accessory attach rate |
-| Bundles | Complete riding kits (bike + helmet + gloves + jersey) | Revenue from non-bike categories |
-| Long-tail rationalization | Review the many small subcategories in the TreeMap and drop or merge the ones that add cost without profit | Profit per SKU |
+| Bundles | Complete riding kits built around the best sellers in the TreeMap (bike + Helmets + Jerseys + Gloves) | Revenue from non-bike categories |
+| Long-tail rationalization | Review the smallest TreeMap blocks (Socks, Caps, Pumps, Cleaners, Locks) and drop or merge the ones that add cost without profit | Profit per SKU |
 
 ---
 
@@ -498,9 +574,9 @@ Notice that **Southwest, Northwest and Canada** are also among the biggest marke
 
 ## 🚀 How to Use the Dashboard
 
-1. Open `FinancialDashboard.pbix` in **Power BI Desktop**.
+1. Open `Financial Performance Dashboard.pbix` in **Power BI Desktop**.
 2. Use the slicers on the left (Month, Product Category, Region Group, ProductStatus) to filter the data.
-3. Click **KeyInfluence**, **DecompositionTree** or **TreeMap** in the header to open a deep-dive page.
+3. Click **KeyInfluence**, **DecompositionTree** or **TreeMap** in the header to open a deep-dive page. On the TreeMap, click a category to drill down into its subcategories.
 4. Click the **back arrow** to return to the main dashboard.
 5. If you change the data: **Home → Refresh**.
 
